@@ -32,7 +32,7 @@ export default function ensureAuthenticated(
       id: sub,
     };
 
-    next();
+    return next();
   } catch (err) {
     throw new AppError('Invalid JWT token', 401);
   }
