@@ -5,7 +5,6 @@ import AppError from '@shared/errors/AppError';
 import IUserRepository from '@modules/users/repositories/IUsersRepository';
 import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
 import IUserTokensRepository from '../repositories/IUserTokensRepository';
-// import User from '../infra/typeorm/entities/User';
 
 interface IRequest {
   email: string;
@@ -49,7 +48,7 @@ class SendFogotPasswordEmailService {
         file: forgotPasswordTemplate,
         variables: {
           name: user.name,
-          link: `http://localhost:3000/reset_password?token=${token}`,
+          link: `${process.env.APP_WEB_URL}/reset_password?token=${token}`,
         },
       },
     });
