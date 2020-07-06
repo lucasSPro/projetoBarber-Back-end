@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-     "outDir": "./dist",
-     "rootDir": "./src",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
     "strictPropertyInitialization": false,
     "baseUrl": "./src",
@@ -18,3 +19,4 @@
     "forceConsistentCasingInFileNames": true
   }
 }
+
