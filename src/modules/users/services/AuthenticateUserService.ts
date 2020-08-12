@@ -52,7 +52,7 @@ class AuthenticateUserService {
       subject: user.id,
       expiresIn,
     });
-
+    delete user.password;
     return {
       user,
       token,

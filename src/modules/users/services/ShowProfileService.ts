@@ -23,7 +23,9 @@ class ShowProfileService {
       throw new AppError('User does not exists');
     }
 
-    return this.usersRepository.save(user);
+    delete user.password;
+
+    return user;
   }
 }
 

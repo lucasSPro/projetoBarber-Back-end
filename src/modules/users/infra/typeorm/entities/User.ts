@@ -18,13 +18,13 @@ class User {
   name: string;
 
   @Column()
-  @Exclude()
   email: string;
 
   @Column()
   avatar: string;
 
   @Column()
+  @Exclude()
   password: string;
 
   @CreateDateColumn()

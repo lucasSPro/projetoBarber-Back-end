@@ -36,8 +36,6 @@ class ListProviderDayAvailabilityService {
       },
     );
 
-    console.log(appoitments);
-
     const hourStart = 8;
 
     const eachHourArray = Array.from(
