@@ -2,7 +2,6 @@ import { injectable, inject } from 'tsyringe';
 
 import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 import IUserRepository from '@modules/users/repositories/IUsersRepository';
-// import AppError from '@shared/errors/AppError';
 
 import User from '@modules/users/infra/typeorm/entities/User';
 import { classToClass } from 'class-transformer';
