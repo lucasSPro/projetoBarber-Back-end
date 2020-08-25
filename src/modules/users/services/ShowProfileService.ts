@@ -3,6 +3,7 @@ import { injectable, inject } from 'tsyringe';
 import IUserRepository from '@modules/users/repositories/IUsersRepository';
 import AppError from '@shared/errors/AppError';
 
+import { classToClass } from 'class-transformer';
 import User from '../infra/typeorm/entities/User';
 
 interface IRequest {
@@ -23,9 +24,7 @@ class ShowProfileService {
       throw new AppError('User does not exists');
     }
 
-    delete user.password;
-
-    return user;
+    return classToClass(user);
   }
 }
 

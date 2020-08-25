@@ -3,6 +3,7 @@ import { injectable, inject } from 'tsyringe';
 import IUserRepository from '@modules/users/repositories/IUsersRepository';
 import AppError from '@shared/errors/AppError';
 import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
+import { classToClass } from 'class-transformer';
 import User from '../infra/typeorm/entities/User';
 
 interface IRequest {
@@ -35,7 +36,7 @@ class UpdateUserAvatarService {
 
     user.avatar = filename;
 
-    await this.usersRepository.save(user);
+    await this.usersRepository.save(classToClass(user));
 
     return user;
   }
